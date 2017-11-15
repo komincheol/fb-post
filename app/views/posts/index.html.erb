@@ -1,0 +1,12 @@
+<h1>페북 게시판</h1>
+
+<% @posts.each do |post| %>
+    <%= link_to "#{post.id} 번째글 | #{post.title}", post_path(post.id) %><br>
+    <!--<%#= link_to "#{post.id} 번째글 | #{post.title}", "/posts/#{post.id}") %><br>-->
+    <!--<a href="/posts/<%#= post.id %>"><%#= post.id %> 번째글 | <%#= post.title %></a>-->
+<% end %>
+
+<!--아래에 3줄 코드는 같은 의미 -->
+<!--<a href="/posts/new">게시물 쓰기</a>-->
+<!--<%#= link_to "게시물 쓰기", "/posts/new" %>-->
+<%= link_to "게시물 쓰기", new_post_path %>
